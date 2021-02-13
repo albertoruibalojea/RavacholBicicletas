@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="../../css/catalogo.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="../../css/mdb.min.css" rel="stylesheet">
+    <!-- Your custom styles (optional) -->
+    <link href="../../css/style.css" rel="stylesheet">
+
+    <!--JS Scripts-->
+    <!--<script src="../../scripts/catalogo.js"></script>-->
+
+    <title>Catálogo</title>
+    <center><img src="../../images/logo.png"></center>
+
+    <!--This container is for the navbar-->
+    <nav class="navbar navbar-expand-lg navbar-light elegant-color-dark">
+        <a class="navbar-brand" href="#">Ravachol Bicicletas</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-light" href="../../index.html">Inicio</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link waves-effect waves-light" href="catalogo.html">Catálogo
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-light" href="../alquiler.html">Alquiler</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-light" href="../taller.html">Taller</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-light" href="../actividades.html">Actividades</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link waves-effect waves-light" href="../contacto.html">Contacto</a>
+                </li>
+            </ul>
+            <form class="form-inline">
+                <div class="md-form my-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search">
+                </div>
+            </form>
+        </div>
+    </nav>
+    <!--/.Navbar default color-->
+
+</head>
+
+<body>
+    <div class="catspacedMarginLeft">
+        <h1>&nbsp;Catálogo</h1>
+        <div class="row">
+            <div class="col-md-2 col-lg-2">
+                <div class="borderbox">
+                    <h4>&nbsp;Filtrar por</h4>
+                    <div id="filterAge">
+                        <h5>&nbsp;Edad</h5>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" onclick="filterSelectionAge('child')" id="ageChild" name="edad">
+                            <label class="form-check-label" for="ageChild">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Niños/as</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" onclick="filterSelectionAge('adult')" id="ageAdult" name="edad">
+                            <label class="form-check-label" for="ageAdult">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adultos</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" onclick="filterSelectionAge('all')" id="ageAll" name="edad">
+                            <label class="form-check-label" for="ageAll">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mostrar
+                                todo</label>
+                        </div>
+                    </div>
+
+                    <div id="filterPrice">
+                        <h5>&nbsp;Precio</h5>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" onclick="filterSelectionPrice('100')" id="price100" name="price">
+                            <label class="form-check-label" for="price100">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;< 100</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" onclick="filterSelectionPrice('200')" id="price200" name="price">
+                            <label class="form-check-label" for="price200">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<
+                                            200</label> </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" onclick="filterSelectionPrice('300')" id="price300" name="price">
+                            <label class="form-check-label" for="price300">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;< 300</label> </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" onclick="filterSelectionPrice('high')" id="priceMore" name="price">
+                            <label class="form-check-label" for="priceMore">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;> 300</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" onclick="filterSelectionPrice('all')" id="priceAll" name="price">
+                            <label class="form-check-label" for="mate">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mostrar
+                                todo</label>
+                        </div>
+                    </div>
+
+                    <div id="filterType">
+                        <h5>&nbsp;Tipo</h5>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" onclick="filterSelectionType('mountain')" id="typeMountain" name="type">
+                            <label class="form-check-label" for="typeMountain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Montaña</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" onclick="filterSelectionType('street')" id="typeStreet" name="type">
+                            <label class="form-check-label" for="typeStreet">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ciudad</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" onclick="filterSelectionType('static')" id="typeStatic" name="type">
+                            <label class="form-check-label" for="typeStatic">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Estática</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" onclick="filterSelectionType('all')" id="typeAll" name="type">
+                            <label class="form-check-label" for="typeAll">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mostrar
+                                todo</label>
+                        </div>
+                    </div>
+
+                    <div id="filterMore">
+                        <h5>&nbsp;Más</h5>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" onclick="filterSelectionMore('others')" id="moreOthers" name="more">
+                            <label class="form-check-label" for="more">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Accesorios</label>
+                        </div>
+
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" onclick="filterSelectionMore('all')" id="moreAll" name="more">
+                            <label class="form-check-label" for="moreAll">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mostrar
+                                todo</label>
+                        </div>
+                    </div><br>
+                </div>
+            </div>
+
+
+            <!--Filter by settings-->
+            <div class="col-sm-5 col-md-6 col-lg-7 col-xl-9">
+                <div class="containerStore">
+                    <div class="filterDiv yass child 200 300 street">
+                        <a href="../catalogo/Bici_Annie-Agua.html"><img src="../../images/bicicletas/annie-agua.png" width="250px" height="200px"></a>
+                        <h6>Bicicleta Annie Agua</h6>
+                    </div>
+                    <div class="filterDiv yass child 200 300 street">
+                        <a href="../catalogo/Bici_Annie-Crema.html"><img src="../../images/bicicletas/annie-crema.png" width="250px" height="200px"></a>
+                        <h6>Bicicleta Annie Crema</h6>
+                    </div>
+                    <div class="filterDiv yass child 200 300 street">
+                        <a href="../catalogo/Bici_Annie-Fucsia.html"><img src="../../images/bicicletas/annie-fucsia.png" width="250px" height="200px"></a>
+                        <h6>Bicicleta Annie Fucsia</h6>
+                        <div class="discount">OFERTA</div>
+                    </div>
+                    <div class="filterDiv yass child 200 300 street">
+                        <a href="../catalogo/Bici_Annie-Purpura.html"><img src="../../images/bicicletas/annie-purpura.png" width="250px" height="200px"></a>
+                        <h6>Bicicleta Annie Púrpura</h6>
+                    </div>
+                    <div class="filterDiv yass child 200 300 street">
+                        <a href="../catalogo/Bici_Annie-Rosa.html"><img src="../../images/bicicletas/annie-rosa.png" width="250px" height="200px"></a>
+                        <h6>Bicicleta Annie Rosa</h6>
+                    </div>
+                    <div class="filterDiv yass adult 300 street">
+                        <a href="../catalogo/Bici_Samantha-Granate.html"><img src="../../images/bicicletas/samantha-granate.png" width="250px" height="200px"></a>
+                        <h6>Bicicleta Samantha Granate</h6>
+                    </div>
+                    <div class="filterDiv yass adult 300 street">
+                        <a href="../catalogo/Bici_Nexus-Crema.html"><img src="../../images/bicicletas/nexus_crema.png" width="250px" height="200px"></a>
+                        <h6>Bicicleta Nexus Crema</h6>
+                        <div class="discount">OFERTA</div>
+                    </div>
+                    <div class="filterDiv yass adult high street mountain">
+                        <a href="../catalogo/Bici_Strike-Azul.html"><img src="../../images/bicicletas/strike-azul.png" width="250px" height="200px"></a>
+                        <h6>Bicicleta Strike Azul</h6>
+                    </div>
+                    <div class="filterDiv yass adult high street mountain">
+                        <a href="../catalogo/Bici_Strike-Blanca.html"><img src="../../images/bicicletas/strike-blanca.png" width="250px" height="200px"></a>
+                        <h6>Bicicleta Strike Blanca</h6>
+                    </div>
+                    <div class="filterDiv yass adult adult 300 street">
+                        <a href="../catalogo/Bici_Eurobike-Banana.html"><img src="../../images/bicicletas/eurobike-banana.png" width="250px" height="200px"></a>
+                        <h6>Bicicleta Eurobike Banana</h6>
+                    </div>
+                    <div class="filterDiv yass adult adult high street">
+                        <a href="../catalogo/Bici_HuffyBike-Deluxe.html"><img src="../../images/bicicletas/huffybikedeluxe.png" width="250px" height="200px"></a>
+                        <h6>Bicicleta Huffy Bike Deluxe</h6>
+                    </div>
+                    <div class="filterDiv yass child 300 street">
+                        <a href="../catalogo/Bici_Luxury.html"><img src="../../images/bicicletas/luxury.png" width="250px" height="200px"></a>
+                        <h6>Bicicleta Luxury</h6>
+                    </div>
+                    <div class="filterDiv yass adult high mountain">
+                        <a href="../catalogo/Bici_Alpina.html"><img src="../../images/bicicletas/alpina.png" width="250px" height="200px"></a>
+                        <h6>Bicicleta Alpina</h6>
+                    </div>
+                    <div class="filterDiv yass adult high mountain">
+                        <a href="../catalogo/Bici_Stone-Amarilla.html"><img src="../../images/bicicletas/stone-amarilla.png" width="250px" height="200px"></a>
+                        <h6>Bicicleta Stone Amarilla</h6>
+                    </div>
+                    <div class="filterDiv yass adult 200 300 static">
+                        <a href="../catalogo/Bici_Estatica-Blanca.html"><img src="../../images/bicicletas/static.png" width="250px" height="200px"></a>
+                        <h6>Bicicleta Estática Blanca</h6>
+                    </div>
+                    <div class="filterDiv yass adult 200 300 static">
+                        <a href="../catalogo/Bici_Estatica-Weslo.html"><img src="../../images/bicicletas/static-weslo.png" width="250px" height="200px"></a>
+                        <h6>Bicicleta Estática Weslo</h6>
+                    </div>
+                    <div class="filterDiv yass 100 200 300 others">
+                        <a href="../catalogo/Ruedas_1.html"><img src="../../images/bicicletas/ruedas1.png" width="250px" height="200px"></a>
+                        <h6>Ruedas de recambio</h6>
+                    </div>
+                    <div class="filterDiv yass 100 200 300 others">
+                        <a href="../catalogo/Ruedas_2.html"><img src="../../images/bicicletas/ruedas2.png" width="250px" height="200px"></a>
+                        <h6>Ruedas de recambio XL</h6>
+                    </div>
+                    <div class="filterDiv yass adult 100 200 300 others">
+                        <a href="../catalogo/Casco_CT4.html"><img src="../../images/bicicletas/ct4.png" width="250px" height="200px"></a>
+                        <h6>Casco CT4</h6>
+                    </div>
+                    <div class="filterDiv yass child 100 200 300 others">
+                        <a href="../catalogo/Casco_Dino.html"><img src="../../images/bicicletas/dino.png" width="250px" height="200px"></a>
+                        <h6>Casco Dino</h6>
+                    </div>
+                    <div class="filterDiv yass adult 100 200 300 others">
+                        <a href="../catalogo/Casco_Bell.html"><img src="../../images/bicicletas/bell.png" width="250px" height="200px"></a>
+                        <h6>Casco Bell</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        //Filter functions
+        filterSelection("all")
+
+        function filterSelection(c) {
+            var x, i;
+            x = document.getElementsByClassName("filterDiv");
+            if (c == "all") c = "";
+            for (i = 0; i < x.length; i++) {
+                w3RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+            }
+        }
+
+        function filterSelectionAge(c) {
+            var x, i;
+            x = document.getElementsByClassName("filterDiv");
+            if (c == "all") c = "";
+            for (i = 0; i < x.length; i++) {
+                w3RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+            }
+        }
+
+        function filterSelectionPrice(c) {
+            var x, i;
+            x = document.getElementsByClassName("filterDiv");
+            if (c == "all") c = "";
+            for (i = 0; i < x.length; i++) {
+                w3RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+            }
+        }
+
+        function filterSelectionType(c) {
+            var x, i;
+            x = document.getElementsByClassName("filterDiv");
+            if (c == "all") c = "";
+            for (i = 0; i < x.length; i++) {
+                w3RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+            }
+        }
+
+        function filterSelectionMore(c) {
+            var x, i;
+            x = document.getElementsByClassName("filterDiv");
+            if (c == "all") c = "";
+            for (i = 0; i < x.length; i++) {
+                w3RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+            }
+        }
+
+        function w3AddClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) == -1) {
+                    element.className += " " + arr2[i];
+                }
+            }
+        }
+
+        function w3RemoveClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                }
+            }
+            element.className = arr1.join(" ");
+        }
+    </script>
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="../../js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="../js/mdb.min.js"></script>
+
+</body>
+
+<!-- Footer -->
+<footer>
+    <iframe width=100% height="315" src="https://mdbootstrap.com/api/snippets/embed/1272648/fullscreen" frameborder="0"></iframe>
+</footer>
+
+</html>
